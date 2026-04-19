@@ -1408,6 +1408,7 @@ namespace BezierSolution
 
 		// Renders the spline gizmo during gameplay
 		// Credit: https://docs.unity3d.com/ScriptReference/GL.html
+#if UNITY_EDITOR
 		private void OnRenderObject()
 		{
 			if( !drawGizmos || endPoints.Count < 2 )
@@ -1444,6 +1445,7 @@ namespace BezierSolution
 
 			GL.End();
 		}
+#endif
 
 		IEnumerator<BezierPoint> IEnumerable<BezierPoint>.GetEnumerator()
 		{
